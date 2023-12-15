@@ -7,7 +7,7 @@ const Calculator = () => {
   const [result, setResult] = useState(0);
 
   const handleClick = (value) => {
-    setInput((prevInput) => prevInput + value);
+    setInput((prevInput) => (prevInput === '0' ? value : prevInput + value));
   };
 
   const handleClear = () => {
@@ -17,7 +17,10 @@ const Calculator = () => {
 
   const handleCalculate = () => {
     try {
-      setResult(eval(input));
+      const calculatedResult = eval(input);
+      setResult(calculatedResult);
+      setInput(calculatedResult.toString());
+
     } catch (error) {
       setResult('Error');
     }
@@ -26,20 +29,18 @@ const Calculator = () => {
   return (
     <div className="calculator">
       <div className="display">
-        <input className="input" type="text" value={input} readOnly />
+        <input type="text" value={input} readOnly />
       </div>
       <div className="buttons">
-        {[1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, '*', 0, '.', '=', '/'].map((item) => (
+      <button className="clear" onClick={handleClear}>
+          AC
+        </button>
+        {['%','/',7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', 0, '.', '='].map((item) => (
           <button key={item} onClick={() => (item === '=' ? handleCalculate() : handleClick(item))}>
             {item}
           </button>
         ))}
-        <button className="clear" onClick={handleClear}>
-          Clear
-        </button>
-      </div>
-      <div className="result">
-        <span>Result: {result}</span>
+        
       </div>
     </div>
   );
