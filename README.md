@@ -17,7 +17,7 @@ This is a simple calculator application built with React. The calculator support
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/calculator-app.git
+    git clone https://github.com/luong-max/calculator
     ```
 
 2. Navigate to the project directory:
