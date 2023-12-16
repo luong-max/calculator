@@ -2,9 +2,7 @@
 
 This is a simple calculator application built with React.
 
-## Description
-
-This is a simple calculator application built with React. The calculator supports basic arithmetic operations such as addition, subtraction, multiplication, and division. It features a clear button to reset the input and includes error handling for invalid calculations.
+[Click here for a live demo!](https://calculator-smoky-rho.vercel.app/)
 
 ## Features
 
